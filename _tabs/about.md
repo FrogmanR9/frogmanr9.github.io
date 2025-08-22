@@ -98,3 +98,12 @@ This site serves as a personal blog.
 It was launched on August 20, 2025, built with Jekyll using the Chirpy theme, and deployed on GitHub Pages.  
 Here, I share articles related to my professional work and personal interests — partly as a way to entertain myself, and partly in the hope of contributing to the community.  
 Everyone is welcome to reach out and exchange ideas.
+
+---
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span>
+  This site has been visited <span id="busuanzi_value_site_pv"></span> times by 
+  <span id="busuanzi_value_site_uv"></span> unique visitors.  
+  This page has <span id="busuanzi_value_page_pv"></span> views.
+</span>

@@ -2,12 +2,18 @@
 title: 使用 Github Pages 搭建个人主页
 date: 2025-08-22 16:30:00 +0800
 categories: [About]
-tags: [guidelines, site]     # TAG names should always be lowercase
+tags: [guidelines, jekyll, site]     # TAG names should always be lowercase
 
 description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页的流程和注意事项。需注意的是，本文不涉及详细的个性化配置。
 ---
 
-## 背景介绍
+## 环境
+
+本文采用 Windows 11 + VS Code。
+
+---
+
+## 操作流程
 
 ### 参考资料
 
@@ -18,14 +24,6 @@ description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页�
 * [GitHub Pages documentation](https://docs.github.com/en/pages)
 * [Jekyll SEO tag](https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md)
 
-### 环境
-
-Windows 11 + VS Code
-
----
-
-## 操作流程
-
 ### 安装 Ruby
 
 1. 在 [官网](https://rubyinstaller.org/downloads) 下载最新版 WITH DEVKIT 的 Ruby。
@@ -35,12 +33,12 @@ Windows 11 + VS Code
 ### 安装 Jekyll
 
 1. 打开 CMD，安装 Jekyll
-``` bash
+``` shell
 gem install jekyll bundler
 ```
 
 2. 查看是否成功安装
-``` bash
+``` shell
 jekyll -v
 ```
 
@@ -63,12 +61,12 @@ jekyll -v
 1. 打开 CMD，到目标目录，从 Github 上克隆刚刚创建的仓库到本地。
 
 2. 打开 VS Code，到该仓库的根目录下，在终端输入
-``` bash
+``` shell
 bundle
 ```
 
 3. 在 VS Code 终端输入
-``` bash
+``` shell
 bundle exec jekyll s
 ```
 此时可以看到以下信息，从浏览器进入该网址即可实现本地预览。
@@ -76,14 +74,16 @@ bundle exec jekyll s
 
 ### 网站基本配置
 
-在 `_config.yml`{: .filepath} 文件中进行配置，包括但不限于：
+1. 在 `_config.yml`{: .filepath} 文件中进行配置，包括但不限于：
 * url
 * avatar：侧边栏头像，可选择本地路径或链接。如选择本地路径，将图片放在 `assets/img/`{: .filepath} 中并在 `_config.yml`{: .filepath} 中填写路径
 * title: 侧边栏名称
 * timezone: 中国输入 Asia/Shanghai
 * 注意 `social` 下的 `links` 至少要有一个链接，且注意格式（`- https://...`）
 
-`_data/contact.yml`{: .filepath} 文件配置网站侧边栏底部诸 `contact` 按钮，对不想要的可以直接注释掉。
+2. `_data/contact.yml`{: .filepath} 文件配置网站侧边栏底部诸 `contact` 按钮，对不想要的可以直接注释掉。
+
+3. 在 `_tabs/about.md`{: .filepath} 文件中配置 `ABOUT` 页信息。
 
 ### 部署个人主页
 
@@ -91,6 +91,65 @@ bundle exec jekyll s
 
 ---
 
-## 撰写文章
+## 其他配置
+
+### 撰写文章
 
 参见 [Writing a New Post](https://chirpy.cotes.page/posts/write-a-new-post)。
+
+### 评论区
+
+可以使用 Disqus、Utterances 或 Giscus 提供的评论系统服务，在 `_config.yml_`{: .filepath} 文件中的 `comments` 板块进行配置。本文使用 Disqus。
+
+1. 在 [官网](https://disqus.com) 注册 Publishers 账号，然后点击右上角 `Settings` 选择 `Add Disqus To Site`，登记站点信息，获取（或设置）站点 Shortname，然后 `Create Site`。
+
+2. 完成后点击 `Settings` 选择 `Admin`，选择刚刚的站点，点击 `Edit Settings`，在 `General` 中编辑 Website URL，在 `Ads` 中关闭广告，在 `Reactions` 中可以修改或关闭 Emojis。
+
+3. 在 `_config.yml_`{: .filepath} 文件中的 `comments` 板块配置 `provider`（disqus）和 `shortname`。
+
+### 访客统计
+
+#### 参考资料
+
+* [在github主页中增加访问量统计和google分析](https://qchaha.github.io/2018/09/19/homepageStatistics.html)
+* [自部署busuanzi访问量统计服务](https://blog.liushen.fun/posts/e401be2d/)
+* [如何自己搭建busuanzi不蒜子平台，搭建静态博客的访问量统计](https://blog.zhheo.com/p/b7bb7832.html)
+
+#### 操作流程
+
+本文使用 [Busuanzi](https://busuanzi.ibruce.info/) 显示访问次数，“两行代码，搞定计数”，在想要显示的地方插入代码即可。
+
+1. 本站总访问量
+``` html
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+```
+
+2. 本站总访客数
+``` html
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"></span> 人</span>
+```
+
+3. 本页总阅读量
+``` html
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_page_pv">本页总阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+```
+
+#### 注意
+
+1. 如果使用 127.0.0.1:4000 进行本地预览，由于域名不是我们的真实域名（`https://username.github.io`{: .filepath}），Busuanzi 给出的站点总访问量和总访客数不正确。
+
+2. 很多静态博客都使用 Busuanzi 进行访客统计，因此其存在响应速度慢的问题。可以考虑自己搭建 Busuanzi 服务，参见上面的资料。
+
+---
+
+Everyone is welcome to reach out and exchange ideas.
+
+Please credit the source: `Frogman's Blog (https://frogmanr9.github.io)`. Thank you.
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span>
+  This page has <span id="busuanzi_value_page_pv"></span> views.
+</span>
