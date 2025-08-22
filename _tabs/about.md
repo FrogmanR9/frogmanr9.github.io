@@ -96,5 +96,5 @@ My current focus is computer architecture.
 
 This site serves as a personal blog.  
 It was launched on August 20, 2025, built with Jekyll using the Chirpy theme, and deployed on GitHub Pages.  
-Here, I share articles related to my professional work and personal interests — partly as a way to experiment and explore, and partly in the hope of contributing to the community.  
+Here, I share articles related to my professional work and personal interests — partly as a way to entertain myself, and partly in the hope of contributing to the community.  
 Everyone is welcome to reach out and exchange ideas.
