@@ -1,6 +1,6 @@
 ---
 title: 使用 Github Pages 搭建个人主页
-date: 2025-08-22 16:30:00 +0800
+date: 2025-08-23 12:30:00 +0800
 categories: [About]
 tags: [guidelines, jekyll, site]     # TAG names should always be lowercase
 
@@ -20,13 +20,13 @@ description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页�
 * [【避坑篇】使用Github Pages搭建个人主页or博客网站【上】](https://zhuanlan.zhihu.com/p/641525444)
 * [【快速部署+客制化】Github Pages+Jekyll Chirpy 速搭个人主页](https://zhuanlan.zhihu.com/p/695291923)
 * [Chirpy notes](https://chirpy.cotes.page)
-* [Jekyll docs](https://jekyllcn.com/docs/home)
+* [Jekyll docs](https://jekyllcn.com/docs/home/)
 * [GitHub Pages documentation](https://docs.github.com/en/pages)
 * [Jekyll SEO tag](https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md)
 
 ### 安装 Ruby
 
-1. 在 [官网](https://rubyinstaller.org/downloads) 下载最新版 WITH DEVKIT 的 Ruby。
+1. 在 [官网](https://rubyinstaller.org/downloads/) 下载最新版 WITH DEVKIT 的 Ruby。
 
 2. 下载完毕打开 ridk install，在跳出的 CMD 中输入 3（选择“MSYS2 and MINGW development tool chain”）。
 
@@ -50,7 +50,7 @@ jekyll -v
 
 这里介绍前一种。使用前一种时也可以将希望修改的文件从 [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 中迁移过来进行改动。
 
-2. 点击 `Use this templete`，`Create a new repository`，仓库命名为 `username.github.io`{: .filepath}。注意区分 Github 的 name 和 username，如果 username 中有大写则用小写。
+2. 点击 `Use this template`，`Create a new repository`，仓库命名为 `username.github.io`{: .filepath}。注意区分 Github 的 name 和 username，如果 username 中有大写则用小写。
 
 3. 在新建仓库中点击 `Settings`，在 `Pages` 中将 Source 修改为 `Github Action`。
 
@@ -95,7 +95,9 @@ bundle exec jekyll s
 
 ### 撰写文章
 
-参见 [Writing a New Post](https://chirpy.cotes.page/posts/write-a-new-post)。
+参见 [Writing a New Post](https://chirpy.cotes.page/posts/write-a-new-post/)。
+
+注意文件名 `YYYY-MM-DD-TITLE.EXTENSION`{: .filepath} 中的 TITLE 不必与 `Front Matter` 中的 title 相同，建议采用小写英文加连字符的格式。
 
 ### 评论区
 
@@ -117,23 +119,23 @@ bundle exec jekyll s
 
 #### 操作流程
 
-本文使用 [Busuanzi](https://busuanzi.ibruce.info/) 显示访问次数，“两行代码，搞定计数”，在想要显示的地方插入代码即可。
+本文使用 [Busuanzi](https://www.busuanzi.cc/) 显示访问次数，“两行代码，搞定计数”，在想要显示的地方插入代码即可。
 
 1. 本站总访问量
 ``` html
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
 ```
 
 2. 本站总访客数
 ``` html
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"></span> 人</span>
 ```
 
 3. 本页总阅读量
 ``` html
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <span id="busuanzi_container_page_pv">本页总阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
 ```
 
@@ -149,7 +151,18 @@ Everyone is welcome to reach out and exchange ideas.
 
 Please credit the source: `Frogman's Blog (https://frogmanr9.github.io)`. Thank you.
 
+<!-- Font Awesome CSS for icons -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" 
+      crossorigin="anonymous">
+
+<!-- Busuanzi visitor counter script -->
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <span>
-  This page has <span id="busuanzi_value_page_pv"></span> views.
+  This page has 
+  <span id="busuanzi_value_page_pv">
+    <!-- Loading spinner before data is fetched -->
+    <i class="fa fa-spinner fa-spin"></i>
+  </span> views.
 </span>

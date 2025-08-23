@@ -35,22 +35,25 @@ description: 本文介绍建站目的和中英文混排文档规范。
 ### 标点符号
 
 1. 在中文语段中，按中文规范，使用中文标点；纯英文语段中，按英文规范，使用英文标点。
-> 例1：FFANG 是美国市场上最受欢迎和表现最佳的五大科技股的首字母缩写，即 Facebook（FB）、Apple（AAPL）、Amazon（AMZN）、Netflix（NFLX）和 Alphabet（GOOG）。  
+> 例1：FAANG 是美国市场上最受欢迎和表现最佳的五大科技股的首字母缩写，即 Facebook（FB）、Apple（AAPL）、Amazon（AMZN）、Netflix（NFLX）和 Alphabet（GOOG）。  
 > 例2：乔布斯在斯坦福大学毕业典礼上的演讲让人印象深刻，其中名句“Stay hungry, stay foolish”更是被很多人奉为座右铭。
 
-2. 表示时间时，应使用半角冒号。
+2. 表示时间时，应使用半角冒号，前后不加空格。
 > 例：现在是早上 8:00。
 
-3. 以下场合使用直线连接号（`-`），占一个半角字符的位置：
+3. 十进制数字中用作分隔符的逗号使用半角符号，前后不加空格。
+> 例：\$12,000,000.00
+
+4. 以下场合使用直线连接号（`-`），占一个半角字符的位置：
 * 两个名词的复合
 > 例：氧化-还原反应
 * 图表编号
 > 例：图 2-1
 
-4. 数值范围（例如日期、时间或数字）应该使用波浪连接号（`～`），占一个全角字符的位置。注意，波浪连接号前后两个值都应加上单位。
+5. 数值范围（例如日期、时间或数字）应该使用波浪连接号（`～`），占一个全角字符的位置。注意，波浪连接号前后两个值都应加上单位。
 > 例：2000 年～2021 年
 
-5. 波浪连接号也可用“至”代替。
+6. 波浪连接号也可用“至”代替。
 > 例：本日气温为 -4°C 至 10°C。
 
 ### 空格
@@ -65,7 +68,7 @@ description: 本文介绍建站目的和中英文混排文档规范。
 
 4. 半角英文字符和阿拉伯数字与中文标点之间不加空格。
 
-5. 段落内的代码、链接与字符、数字直接加半角空格，与标点之间不加空格。
+5. 段落内的代码、链接与字符、数字之间加半角空格，与标点之间不加空格。
 > 例：`pwd` 命令可显示当前工作目录的绝对路径。
 
 ---
@@ -74,7 +77,18 @@ Everyone is welcome to reach out and exchange ideas.
 
 Please credit the source: `Frogman's Blog (https://frogmanr9.github.io)`. Thank you.
 
+<!-- Font Awesome CSS for icons -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" 
+      crossorigin="anonymous">
+
+<!-- Busuanzi visitor counter script -->
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <span>
-  This page has <span id="busuanzi_value_page_pv"></span> views.
+  This page has 
+  <span id="busuanzi_value_page_pv">
+    <!-- Loading spinner before data is fetched -->
+    <i class="fa fa-spinner fa-spin"></i>
+  </span> views.
 </span>
