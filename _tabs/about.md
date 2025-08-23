@@ -101,60 +101,15 @@ Everyone is welcome to reach out and exchange ideas.
 
 ---
 
-<!-- Place this where you want the running time to appear -->
-<span id="site_runtime"></span>
+<img src="https://readme-typing-svg.demolab.com/?lines=Website+Statistics;Welcome+to+Frogman's+Blog&center=true&width=1000&height=50&size=32&font=Righteous" alt="Typing text animation">
 
-<script>
-  // GitHub repository creation time
-  const siteCreateDate = new Date("2025-08-20T11:12:03Z");
+Page Views (Moe Counter):
 
-  function updateRuntime() {
-    const now = new Date();
+<img src="https://count.getloli.com/@frogman?name=frogman&theme=morden-num&padding=7&offset=0&align=center&scale=1&pixelated=1&darkmode=auto" alt="Site runtime counter">
 
-    // Calculate differences
-    let years = now.getFullYear() - siteCreateDate.getFullYear();
-    let months = now.getMonth() - siteCreateDate.getMonth();
-    let days = now.getDate() - siteCreateDate.getDate();
-    let hours = now.getHours() - siteCreateDate.getHours();
-    let minutes = now.getMinutes() - siteCreateDate.getMinutes();
-    let seconds = now.getSeconds() - siteCreateDate.getSeconds();
 
-    // Handle borrow if negative
-    if (seconds < 0) { seconds += 60; minutes--; }
-    if (minutes < 0) { minutes += 60; hours--; }
-    if (hours < 0) { hours += 24; days--; }
-    if (days < 0) {
-      // Get the number of days in the previous month
-      const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-      days += prevMonth;
-      months--;
-    }
-    if (months < 0) { months += 12; years--; }
 
-    // Convert years and months to days
-    let totalDays = days;
-    // Add days for the months
-    for (let i = 0; i < months; i++) {
-      const month = (siteCreateDate.getMonth() + i) % 12;
-      const year = siteCreateDate.getFullYear() + Math.floor((siteCreateDate.getMonth() + i) / 12);
-      totalDays += new Date(year, month + 1, 0).getDate();
-    }
-    // Add days for the years (including leap years)
-    for (let y = 0; y < years; y++) {
-      const year = siteCreateDate.getFullYear() + y;
-      totalDays += (new Date(year, 1, 29).getMonth() === 1) ? 366 : 365;
-    }
-
-    // Display the running time
-    document.getElementById("site_runtime").innerText =
-      `This site has been running for ${totalDays} days ${hours} hours ${minutes} minutes ${seconds} seconds.`;
-  }
-
-  // Run once immediately
-  updateRuntime();
-  // Update every second
-  setInterval(updateRuntime, 1000);
-</script>
+<iframe src="/assets/html/site_runtime.html" style="border:none; width:100%; height:40px;"></iframe>
 
 
 
@@ -180,5 +135,5 @@ Everyone is welcome to reach out and exchange ideas.
   <span id="busuanzi_value_page_pv">
     <!-- Loading spinner before data is fetched -->
     <i class="fa fa-spinner fa-spin"></i>
-  </span> views.
+  </span> views (Busuanzi).
 </span>

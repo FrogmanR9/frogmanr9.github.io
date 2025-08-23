@@ -1,8 +1,8 @@
 ---
-title: 第一篇博文：关于本站与文档规范
+title: 关于本站与文档规范
 date: 2025-08-22 14:30:00 +0800
-categories: [About]
-tags: [guidelines, site, style]     # TAG names should always be lowercase
+categories: [Web]
+tags: [guidelines, style]     # TAG names should always be lowercase
 
 description: 本文介绍建站目的和中英文混排文档规范。
 ---

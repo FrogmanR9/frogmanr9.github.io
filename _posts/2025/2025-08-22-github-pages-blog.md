@@ -1,8 +1,8 @@
 ---
 title: 使用 Github Pages 搭建个人主页
-date: 2025-08-23 12:30:00 +0800
-categories: [About]
-tags: [guidelines, jekyll, site]     # TAG names should always be lowercase
+date: 2025-08-22 16:30:00 +0800
+categories: [Web]
+tags: [guidelines, jekyll]     # TAG names should always be lowercase
 
 description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页的流程和注意事项。需注意的是，本文不涉及详细的个性化配置。
 ---
@@ -93,11 +93,19 @@ bundle exec jekyll s
 
 ## 其他配置
 
+### 自定义网站图标
+
+Chirpy 的图标放在 `assets/img/favicons`{: .filepath} （注意加 s）中。
+
+通过 [Real Favicon Generator](https://realfavicongenerator.net) 生成网站图标（所有选项均可保持默认）。下载生成的包，删除其中的 `site.webmanifest`{: .filepath} 文件，然后将其他文件放置在 `assets/img/favicons`{: .filepath} 目录下即可。
+
 ### 撰写文章
 
 参见 [Writing a New Post](https://chirpy.cotes.page/posts/write-a-new-post/)。
 
 注意文件名 `YYYY-MM-DD-TITLE.EXTENSION`{: .filepath} 中的 TITLE 不必与 `Front Matter` 中的 title 相同，建议采用小写英文加连字符的格式。
+
+写作语法参见 [写作语法示例](https://pansong291.github.io/chirpy-demo-zhCN/posts/writing-syntax-example/)。
 
 ### 评论区
 
@@ -116,10 +124,11 @@ bundle exec jekyll s
 * [在github主页中增加访问量统计和google分析](https://qchaha.github.io/2018/09/19/homepageStatistics.html)
 * [自部署busuanzi访问量统计服务](https://blog.liushen.fun/posts/e401be2d/)
 * [如何自己搭建busuanzi不蒜子平台，搭建静态博客的访问量统计](https://blog.zhheo.com/p/b7bb7832.html)
+* [Moe Counter!](https://count.getloli.com)
 
 #### 操作流程
 
-本文使用 [Busuanzi](https://www.busuanzi.cc/) 显示访问次数，“两行代码，搞定计数”，在想要显示的地方插入代码即可。
+本文使用 [Busuanzi](https://www.busuanzi.cc) 显示访问次数，“两行代码，搞定计数”，在想要显示的地方插入代码即可。
 
 1. 本站总访问量
 ``` html
@@ -143,7 +152,11 @@ bundle exec jekyll s
 
 1. 如果使用 127.0.0.1:4000 进行本地预览，由于域名不是我们的真实域名（`https://username.github.io`{: .filepath}），Busuanzi 给出的站点总访问量和总访客数不正确。
 
-2. 很多静态博客都使用 Busuanzi 进行访客统计，因此其存在响应速度慢的问题。可以考虑自己搭建 Busuanzi 服务，参见上面的资料。
+2. 很多静态博客都使用 Busuanzi 进行访客统计，因此其存在响应速度慢的问题。可以考虑自己搭建 Busuanzi 服务，参见上面的资料。也可以像本站 [ABOUT 页面]({{ site.baseurl }}/about/) 中展示的那样使用 [Moe Counter](https://count.getloli.com) 进行页面浏览数的统计，有很多效果可供选择。
+
+### 其他装饰效果
+
+推荐阅读 [Github主页Profile装饰指南](https://wolfsmith520-github.github.io/2025/04/20/GithubProfileGuide/)。
 
 ---
 

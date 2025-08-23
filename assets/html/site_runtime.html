@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;       /* vertical center */
+        justify-content: center;   /* horizontal center */
+        font-family: inherit;
+        font-size: 0.961rem;
+        text-align: center;        /* keep parent center */
+        background: transparent;
+        color: inherit;            /* default fallback */
+        transition: background 0.3s, color 0.3s;
+      }
+      #site_runtime {
+        display: block;
+        width: 100%;               /* fill parent horizontally */
+        text-align: left;          /* left-align the text itself */
+      }
+    </style>
+  </head>
+  <body>
+    <span id="site_runtime"></span>
+    <script>
+      const siteCreateDate = new Date("2025-08-20T11:12:03Z");
+
+      function updateRuntime() {
+        const now = new Date();
+        const diffMs = now - siteCreateDate;           // difference in milliseconds
+
+        const totalSeconds = Math.floor(diffMs / 1000);
+        const seconds = totalSeconds % 60;
+
+        const totalMinutes = Math.floor(totalSeconds / 60);
+        const minutes = totalMinutes % 60;
+
+        const totalHours = Math.floor(totalMinutes / 60);
+        const hours = totalHours % 24;
+
+        const totalDays = Math.floor(totalHours / 24); // total days since creation
+
+        document.getElementById("site_runtime").innerText =
+          `This site has been running for ${totalDays} days ${hours} hours ${minutes} minutes ${seconds} seconds.`;
+      }
+
+      function syncTheme() {
+        try {
+          const parentDoc = window.parent.document;
+          const parentStyles = getComputedStyle(parentDoc.documentElement);
+          const textColor = parentStyles.getPropertyValue('--text-color');
+          const bgColor = getComputedStyle(parentDoc.body).backgroundColor;
+          document.body.style.backgroundColor = bgColor;
+          if (textColor) {
+            document.body.style.color = textColor.trim();
+          }
+        } catch(e) {
+          console.warn('Cannot access parent theme, possibly cross-origin', e);
+        }
+      }
+
+      updateRuntime();
+      syncTheme();
+
+      setInterval(updateRuntime, 1000);
+      setInterval(syncTheme, 1000);
+    </script>
+  </body>
+</html>
