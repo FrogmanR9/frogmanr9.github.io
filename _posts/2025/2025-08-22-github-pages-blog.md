@@ -150,7 +150,7 @@ Chirpy 的图标放在 `assets/img/favicons`{: .filepath} （注意加 s）中�
 
 #### 注意
 
-1. 如果使用 127.0.0.1:4000 进行本地预览，由于域名不是我们的真实域名（`https://username.github.io`{: .filepath}），Busuanzi 给出的站点总访问量和总访客数不正确。
+1. 如果使用 127.0.0.1:4000 进行本地预览，由于域名不是我们的真实域名（`username.github.io`{: .filepath}），Busuanzi 给出的站点总访问量和总访客数不正确。
 
 2. 很多静态博客都使用 Busuanzi 进行访客统计，因此其存在响应速度慢的问题。可以考虑自己搭建 Busuanzi 服务，参见上面的资料。也可以像本站 [ABOUT 页面]({{ site.baseurl }}/about/) 中展示的那样使用 [Moe Counter](https://count.getloli.com) 进行页面浏览数的统计，有很多效果可供选择。
 
