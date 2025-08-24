@@ -98,7 +98,43 @@ order: 4
 
 ### About Me
 
-Born and raised in Nanjing, currently residing in Shanghai.  
+<!-- Badge Rows -->
+<div style="text-align:center; margin-bottom:1rem;">
+  <!-- first row -->
+  <div>
+    <img src="https://img.shields.io/badge/Just-for_fun-blue?style=flat" 
+        alt="Just for fun badge"
+        style="display:inline-block; height:22px; margin-right:6px; vertical-align:middle;">
+    <img src="https://img.shields.io/badge/NASA-E03C31?style=flat&logo=nasa&logoColor=white" 
+        alt="NASA badge"
+        style="display:inline-block; height:22px; margin-right:6px; vertical-align:middle;">
+    <img src="https://img.shields.io/badge/FACTA_NON_VERBA-8A2BE2?style=flat" 
+        alt="FACTA NON VERBA badge"
+        style="display:inline-block; height:22px; margin-right:6px; vertical-align:middle;">
+  </div>
+  <!-- second row -->
+  <div>
+    <img src="https://img.shields.io/badge/C-A8B9CC?style=flat&logo=c&logoColor=white" 
+        alt="C badge"
+        style="display:inline-block; height:22px; margin-right:6px; vertical-align:middle;">
+    <img src="https://img.shields.io/badge/C++-00599C?style=flat&logo=cplusplus&logoColor=white" 
+        alt="C++ badge"
+        style="display:inline-block; height:22px; margin-right:6px; vertical-align:middle;">
+    <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" 
+        alt="Python badge"
+        style="display:inline-block; height:22px; margin-right:6px; vertical-align:middle;">
+  </div>
+  <!-- third row -->
+  <div>
+    <img src="https://img.shields.io/badge/巨浪_巨浪_不断地增涨-1E90FF?style=flat" 
+        alt="巨浪 巨浪 不断地增涨 badge"
+        style="display:inline-block; height:22px; margin-right:6px; vertical-align:middle;">
+  </div>
+</div>
+
+
+
+Born and raised in Nanjing (南京), currently residing in Shanghai (上海).  
 A sports enthusiast.  
 My current focus is computer architecture.
 

@@ -50,7 +50,7 @@ jekyll -v
 * 对于新手而言，建议使用 [chirpy-starter](https://github.com/cotes2020/chirpy-starter)，缺点是能做的改动较少；
 * 如果对 Jekyll 比较熟悉或希望做较大改动，可以使用 [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)。
 
-这里介绍前一种。使用前一种时也可以将希望修改的文件从 [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 中迁移过来进行改动。
+    这里介绍前一种。使用前一种时也可以将希望修改的文件从 [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 中迁移过来进行改动。
 
 2. 点击 `Use this template`，`Create a new repository`，仓库命名为 `username.github.io`{: .filepath}。注意区分 Github 的 name 和 username，如果 username 中有大写则用小写。
 
@@ -74,7 +74,7 @@ bundle exec jekyll s
 此时可以看到以下信息，从浏览器进入该网址即可实现本地预览。
 > Server address: http://127.0.0.1:4000/
 
-需要注意的是，本地预览和实际部署效果不完全一致。
+    需要注意的是，本地预览和实际部署效果不完全一致。
 
 ### 网站基本配置
 
@@ -107,15 +107,20 @@ Chirpy 的图标放在 `assets/img/favicons`{: .filepath} （注意加 s）中�
 
 参见 [Writing a New Post](https://chirpy.cotes.page/posts/write-a-new-post/)。
 
-注意文件名 `YYYY-MM-DD-TITLE.EXTENSION`{: .filepath} 中的 TITLE 不必与 Front Matter 中的 title 相同，建议采用小写英文加连字符的格式。
-
-Front Matter 中的 title 建议用半角双引号（`""`）包裹，以防 YAML 解析器对标题中特殊字符（如 :）误解析。
-
 写作语法参见 [写作语法示例](https://pansong291.github.io/chirpy-demo-zhCN/posts/writing-syntax-example/)。
+
+#### 注意
+
+1. 文件名 `YYYY-MM-DD-TITLE.EXTENSION`{: .filepath} 中的 TITLE 不必与 Front Matter 中的 title 相同，建议采用小写英文加连字符的格式。
+2. Front Matter 中的 title 建议用半角双引号（`""`）包裹，以防 YAML 解析器对标题中特殊字符（如 :）误解析。
+3. Jekyll/GitHub Pages 的无障碍检查要求每个 `<img>` 都要有 `alt` 描述。
+4. Kramdown 是 Jekyll 的默认 Markdown 渲染器。该渲染器默认对每个有序列表都会重新从 1 开始编号，无论 Markdown 中写的是 1.、2. 还是 3.。默认情况下，Jekyll 使用 GitHub Flavored Markdown（GFM）处理器处理 Kramdown。如果希望隔一行的内容被算作第 1 条列表项的一部分，而不是新开一段，从而避免 Kramdown 自动重编号，**列表项内的额外段落必须缩进两个制表符（四个空格）**。
 
 ### 评论区
 
 可以使用 Disqus、Utterances 或 Giscus 提供的评论系统服务，在 `_config.yml_`{: .filepath} 文件中的 comments 板块进行配置。本文使用 Disqus。
+
+#### 操作流程
 
 1. 在 [官网](https://disqus.com) 注册 Publishers 账号，然后点击右上角 `Settings` 选择 `Add Disqus To Site`，登记站点信息，获取（或设置）站点 Shortname，然后 `Create Site`。
 
