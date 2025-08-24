@@ -1,5 +1,5 @@
 ---
-title: 关于本站与文档规范
+title: "关于本站与文档规范"
 date: 2025-08-22 14:30:00 +0800
 categories: [Web]
 tags: [guidelines, style]     # TAG names should always be lowercase
@@ -30,7 +30,7 @@ description: 本文介绍建站目的和中英文混排文档规范。
 * [中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)
 * [简体中文文本排版指南](https://zhuanlan.zhihu.com/p/49729668)
 
-基本的中英文语法和标点使用规范不在此赘述。
+基本的中英文和 Markdown 语法及标点使用规范不在此赘述。
 
 ### 标点符号
 
@@ -71,11 +71,34 @@ description: 本文介绍建站目的和中英文混排文档规范。
 5. 段落内的代码、链接与字符、数字之间加半角空格，与标点之间不加空格。
 > 例：`pwd` 命令可显示当前工作目录的绝对路径。
 
+### Markdown 语法
+
+1. 内联代码 `Inline Code` 在本站文章中的使用：
+* 代码
+* 文件路径
+``` markdown
+`/path/to/the/file.extend`{: .filepath}
+```
+* 网站 tab
+``` markdown
+点击 `Settings` 可以看到相关选项。
+```
+* 希望可以被读者直接选中复制的文本
+``` markdown
+Please credit the source as `Frogman's Blog (https://frogmanr9.github.io)` and include the link to this article (`{{ page.url | absolute_url }}`). Thank you.
+```
+
+2. 在本站文章中使用二至五级标题。标题与下方空一行。
+
 ---
 
 Everyone is welcome to reach out and exchange ideas.
 
-Please credit the source: `Frogman's Blog (https://frogmanr9.github.io)`. Thank you.
+
+
+Please credit the source as `Frogman's Blog (https://frogmanr9.github.io)` and include the link to this article (`{{ page.url | absolute_url }}`). Thank you.
+
+
 
 <!-- Font Awesome CSS for icons -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 

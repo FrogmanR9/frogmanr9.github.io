@@ -12,9 +12,10 @@ order: 4
   <h2 class="fw-bold mb-1 frogman-name">Frogman</h2>
   
   <!-- Motto -->
-  <p class="fst-italic text-muted motto">
-    TRANSIRE SUUM PECTUS MUNDOQUE POTIRI
-  </p>
+  <div class="motto text-center">
+    <p class="fst-italic text-muted motto-line">TRANSIRE SUUM PECTUS MUNDOQUE POTIRI</p>
+    <p class="text-muted chinese motto-line">天行健 君子以自强不息</p>
+  </div>
 
   <!-- Contact -->
   <div class="contact-bar">
@@ -42,8 +43,19 @@ order: 4
 
 /* Motto spacing */
 .motto {
-  line-height: 1.4;
   margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.motto-line {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Chinese line: only set font family, keep color/size unchanged */
+.motto .chinese {
+  font-family: "LXGW WenKai", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-style: normal; /* no italic for Chinese */
 }
 
 /* Contact bar spacing */
@@ -103,13 +115,19 @@ Everyone is welcome to reach out and exchange ideas.
 
 <img src="https://readme-typing-svg.demolab.com/?lines=Website+Statistics;Welcome+to+Frogman's+Blog&center=true&width=1000&height=50&size=32&font=Righteous" alt="Typing text animation">
 
-Page Views (Moe Counter):
-
-<img src="https://count.getloli.com/@frogman?name=frogman&theme=morden-num&padding=7&offset=0&align=center&scale=1&pixelated=1&darkmode=auto" alt="Site runtime counter">
-
 
 
 <iframe src="/assets/html/site_runtime.html" style="border:none; width:100%; height:40px;"></iframe>
+
+
+
+Total posts published: {{ site.posts | size }}.
+
+
+
+Page Views (Moe Counter):
+
+<img src="https://count.getloli.com/@frogman?name=frogman&theme=morden-num&padding=7&offset=0&align=center&scale=1&pixelated=1&darkmode=auto" alt="Site runtime counter">
 
 
 
@@ -121,19 +139,26 @@ Page Views (Moe Counter):
 <!-- Busuanzi visitor counter script -->
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<span>
-  This site has been visited 
-  <span id="busuanzi_value_site_pv">
-    <!-- Loading spinner before data is fetched -->
-    <i class="fa fa-spinner fa-spin"></i>
-  </span> times by 
-  <span id="busuanzi_value_site_uv">
-    <!-- Loading spinner before data is fetched -->
-    <i class="fa fa-spinner fa-spin"></i>
-  </span> unique visitors.  
-  This page has 
-  <span id="busuanzi_value_page_pv">
-    <!-- Loading spinner before data is fetched -->
-    <i class="fa fa-spinner fa-spin"></i>
-  </span> views (Busuanzi).
-</span>
+<div style="margin:2rem auto; max-width:600px; text-align:center; padding:1rem; border:1px solid #ddd; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+  <h3 style="margin-bottom:0.5rem;">
+    <i class="fas fa-chart-bar" style="margin-right:6px;"></i>
+    Busuanzi Statistics
+  </h3>
+  <div>
+    <div>
+      This site has been visited 
+      <span id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+      </span> times by 
+      <span id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+      </span> unique visitors.
+    </div>
+    <div>
+      This page has 
+      <span id="busuanzi_value_page_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+      </span> views.
+    </div>
+  </div>
+</div>

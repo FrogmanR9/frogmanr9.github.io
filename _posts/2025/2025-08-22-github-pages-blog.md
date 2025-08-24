@@ -1,5 +1,5 @@
 ---
-title: 使用 Github Pages 搭建个人主页
+title: "使用 Github Pages 搭建个人主页"
 date: 2025-08-22 16:30:00 +0800
 categories: [Web]
 tags: [guidelines, jekyll]     # TAG names should always be lowercase
@@ -10,6 +10,8 @@ description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页�
 ## 环境
 
 本文采用 Windows 11 + VS Code。
+
+在 Windows 系统上搭建本地调试环境可以使用 Dev Containers，可以参见 [Using Dev Containers (Recommended for Windows)](https://chirpy.cotes.page/posts/getting-started/#using-dev-containers-recommended-for-windows)（本文未采用）。
 
 ---
 
@@ -70,7 +72,9 @@ bundle
 bundle exec jekyll s
 ```
 此时可以看到以下信息，从浏览器进入该网址即可实现本地预览。
-> Server address: http://127.0.0.1:4000/  
+> Server address: http://127.0.0.1:4000/
+
+需要注意的是，本地预览和实际部署效果不完全一致。
 
 ### 网站基本配置
 
@@ -79,7 +83,7 @@ bundle exec jekyll s
 * avatar：侧边栏头像，可选择本地路径或链接。如选择本地路径，将图片放在 `assets/img/`{: .filepath} 中并在 `_config.yml`{: .filepath} 中填写路径
 * title: 侧边栏名称
 * timezone: 中国输入 Asia/Shanghai
-* 注意 `social` 下的 `links` 至少要有一个链接，且注意格式（`- https://...`）
+* 注意 social 下的 links 至少要有一个链接，且注意格式（`- https://...`）
 
 2. `_data/contact.yml`{: .filepath} 文件配置网站侧边栏底部诸 `contact` 按钮，对不想要的可以直接注释掉。
 
@@ -87,7 +91,7 @@ bundle exec jekyll s
 
 ### 部署个人主页
 
-把本地修改 commit 并提交到 Github 远程仓库上，可以触发 `Github Action` 的 `Build and deployment` 工作流进行部署。如果没有自动触发，可以手动点击 `Build and Deploy` 进行部署。
+把本地修改 commit 并提交到 Github 远程仓库上，可以触发 Github Action 的 Build and deployment 工作流进行部署。如果没有自动触发，可以手动点击 `Build and Deploy` 进行部署。
 
 ---
 
@@ -103,19 +107,21 @@ Chirpy 的图标放在 `assets/img/favicons`{: .filepath} （注意加 s）中�
 
 参见 [Writing a New Post](https://chirpy.cotes.page/posts/write-a-new-post/)。
 
-注意文件名 `YYYY-MM-DD-TITLE.EXTENSION`{: .filepath} 中的 TITLE 不必与 `Front Matter` 中的 title 相同，建议采用小写英文加连字符的格式。
+注意文件名 `YYYY-MM-DD-TITLE.EXTENSION`{: .filepath} 中的 TITLE 不必与 Front Matter 中的 title 相同，建议采用小写英文加连字符的格式。
+
+Front Matter 中的 title 建议用半角双引号（`""`）包裹，以防 YAML 解析器对标题中特殊字符（如 :）误解析。
 
 写作语法参见 [写作语法示例](https://pansong291.github.io/chirpy-demo-zhCN/posts/writing-syntax-example/)。
 
 ### 评论区
 
-可以使用 Disqus、Utterances 或 Giscus 提供的评论系统服务，在 `_config.yml_`{: .filepath} 文件中的 `comments` 板块进行配置。本文使用 Disqus。
+可以使用 Disqus、Utterances 或 Giscus 提供的评论系统服务，在 `_config.yml_`{: .filepath} 文件中的 comments 板块进行配置。本文使用 Disqus。
 
 1. 在 [官网](https://disqus.com) 注册 Publishers 账号，然后点击右上角 `Settings` 选择 `Add Disqus To Site`，登记站点信息，获取（或设置）站点 Shortname，然后 `Create Site`。
 
-2. 完成后点击 `Settings` 选择 `Admin`，选择刚刚的站点，点击 `Edit Settings`，在 `General` 中编辑 Website URL，在 `Ads` 中关闭广告，在 `Reactions` 中可以修改或关闭 Emojis。
+2. 完成后点击 `Settings` 选择 `Admin`，选择刚刚的站点，点击 `Edit Settings`，在 `General` 中编辑 Website URL，在 `Ads` 中关闭广告，在 `Reactions` 中可以修改或关闭 Emojis，在 `Moderation` 中可以设置评论规则。
 
-3. 在 `_config.yml_`{: .filepath} 文件中的 `comments` 板块配置 `provider`（disqus）和 `shortname`。
+3. 在 `_config.yml_`{: .filepath} 文件中的 comments 板块配置 provider（disqus）和 shortname。
 
 ### 访客统计
 
@@ -162,7 +168,11 @@ Chirpy 的图标放在 `assets/img/favicons`{: .filepath} （注意加 s）中�
 
 Everyone is welcome to reach out and exchange ideas.
 
-Please credit the source: `Frogman's Blog (https://frogmanr9.github.io)`. Thank you.
+
+
+Please credit the source as `Frogman's Blog (https://frogmanr9.github.io)` and include the link to this article (`{{ page.url | absolute_url }}`). Thank you.
+
+
 
 <!-- Font Awesome CSS for icons -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
