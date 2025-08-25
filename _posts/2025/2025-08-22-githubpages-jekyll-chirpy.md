@@ -1,5 +1,5 @@
 ---
-title: "使用 Github Pages 搭建个人主页"
+title: "使用 Github Pages + Jekyll Chirpy 搭建个人主页"
 date: 2025-08-22 16:30:00 +0800
 categories: [Web]
 tags: [guidelines, jekyll]     # TAG names should always be lowercase
@@ -11,7 +11,7 @@ description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页�
 
 本文采用 Windows 11 + VS Code。
 
-在 Windows 系统上搭建本地调试环境可以使用 Dev Containers，可以参见 [Using Dev Containers (Recommended for Windows)](https://chirpy.cotes.page/posts/getting-started/#using-dev-containers-recommended-for-windows)（本文未采用）。
+在 Windows 系统上搭建本地调试环境可以使用 Dev Containers，参见 [Using Dev Containers (Recommended for Windows)](https://chirpy.cotes.page/posts/getting-started/#using-dev-containers-recommended-for-windows)（本文未采用）。
 
 ---
 
@@ -30,7 +30,7 @@ description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页�
 
 1. 在 [官网](https://rubyinstaller.org/downloads/) 下载最新版 WITH DEVKIT 的 Ruby。
 
-2. 下载完毕打开 ridk install，在跳出的 CMD 中输入 3（选择“MSYS2 and MINGW development tool chain”）。
+2. 下载完毕打开 ridk install，在跳出的 CMD 中输入 3（选择“MSYS2 and MINGW development tool chain”），安装 gem 扩展。
 
 ### 安装 Jekyll
 

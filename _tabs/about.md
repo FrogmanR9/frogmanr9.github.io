@@ -80,18 +80,6 @@ order: 4
 .email-text {
   margin-left: 0.5rem;
 }
-
-@media (max-width: 480px) {
-  .icon-link {
-    flex-wrap: wrap;
-    word-break: break-all;
-  }
-
-  .icon-link i {
-    margin-bottom: 0.25rem;
-    margin-left: 0
-  }
-}
 </style>
 
 ---
@@ -126,7 +114,7 @@ order: 4
   </div>
   <!-- third row -->
   <div>
-    <img src="https://img.shields.io/badge/巨浪_巨浪_不断地增涨-1E90FF?style=flat" 
+    <img src="https://img.shields.io/badge/巨浪_巨浪-不断地增涨-1E90FF?style=flat" 
         alt="巨浪 巨浪 不断地增涨 badge"
         style="display:inline-block; height:22px; margin-right:6px; vertical-align:middle;">
   </div>
