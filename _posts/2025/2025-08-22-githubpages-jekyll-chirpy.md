@@ -114,7 +114,7 @@ Chirpy 的图标放在 `assets/img/favicons`{: .filepath} （注意加 s）中�
 1. 文件名 `YYYY-MM-DD-TITLE.EXTENSION`{: .filepath} 中的 TITLE 不必与 Front Matter 中的 title 相同，建议采用小写英文加连字符的格式。
 2. Front Matter 中的 title 建议用半角双引号（`""`）包裹，以防 YAML 解析器对标题中特殊字符（如 :）误解析。
 3. Jekyll/GitHub Pages 的无障碍检查要求每个 `<img>` 都要有 `alt` 描述。
-4. Kramdown 是 Jekyll 的默认 Markdown 渲染器。该渲染器默认对每个有序列表都会重新从 1 开始编号，无论 Markdown 中写的是 1.、2. 还是 3.。默认情况下，Jekyll 使用 GitHub Flavored Markdown（GFM）处理器处理 Kramdown。如果希望隔一行的内容被算作第 1 条列表项的一部分，而不是新开一段，从而避免 Kramdown 自动重编号，**列表项内的额外段落必须缩进两个制表符（四个空格）**。
+4. Kramdown 是 Jekyll 的默认 Markdown 渲染器。该渲染器默认对每个有序列表都会重新从 1 开始编号，无论 Markdown 中写的是 1.、2. 还是 3.。默认情况下，Jekyll 使用 GitHub Flavored Markdown（GFM）处理器处理 Kramdown。如果希望隔一行的内容被算作第 1 条列表项的一部分，而不是新开一段，从而避免 Kramdown 自动重编号，**列表项内的额外段落必须缩进四个空格**。
 
 ### 评论区
 

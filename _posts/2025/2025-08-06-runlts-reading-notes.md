@@ -1,7 +1,7 @@
 ---
 title: "RUNLTS: Register-value-aware Predictor Utilizing Nested Large Tables 论文与源代码阅读笔记"
 date: 2025-08-06 19:04:00 +0800
-categories: [CPU, BPU]
+categories: [CPU, Branch Prediction Unit (BPU)]
 tags: [cbp, cpp, notes, papers]     # TAG names should always be lowercase
 
 description: 对 CBP-6 冠军项目 RUNLTS 分支预测器论文和源代码的阅读笔记。本文原为之前汇报所用，迁移至此，比较杂乱。

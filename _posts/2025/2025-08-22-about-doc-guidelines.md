@@ -71,6 +71,8 @@ description: 本文介绍建站目的和中英文混排文档规范。
 5. 段落内的内联代码、链接与字符、数字之间加半角空格，与标点之间不加空格。
 > 例：`pwd` 命令可显示当前工作目录的绝对路径。
 
+6. 使用加粗、删除线等文本样式与字符、数字之间加半角空格，与标点之间不加空格。
+
 ### Markdown 语法
 
 1. 内联代码 `Inline Code` 在本站文章中的使用：
@@ -92,7 +94,9 @@ description: 本文介绍建站目的和中英文混排文档规范。
 Please credit the source as `Frogman's Blog (https://frogmanr9.github.io)` and include the link to this article (`{{ page.url | absolute_url }}`). Thank you.
 ```
 
-2. 在本站文章中使用二至五级标题。标题与下方空一行。
+2. 代码块需注明语言，必要时注明具体文件（及路径）。
+
+3. 在本站文章中使用二至五级标题。标题下方空一行。
 
 ---
 
