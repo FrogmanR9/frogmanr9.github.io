@@ -27,11 +27,11 @@ branch_prediction::BPredUnit *branchPred;
 ```
 {: file='fetch.hh'}
 
-处理器其他部件要想与预测器通信，需要先通过 time buffer 将信息传递给 fetch 模块。
+处理器其他模块要想与预测器通信，需要先通过 time buffer 将信息传递给 fetch 模块。
 
 这里简单介绍一下 O3CPU 使用的 time buffer，在 `comm.hh`{: .filepath} 中定义了两类 time buffer，分别是
-1. 前向通信，主要结构包括 `struct FetchStruct`（from fetch to decode）、`struct IEWStruct`（from IEW to commit）等。前向流是流水线数据，承载的是指令流本身，逐级传递。而各级的带宽、延迟不同，因此用不同的 `struct` 来精确描述每一级传输的“一组指令 bundle”。
-2. 后向通信，由 `struct TimeStruct` 承担，其中定义了 `struct DecodeComm`、`struct IewComm` 等结构体。后向信息不是指令流，而是一些全局控制信号。这些控制信息在硬件里通常通过广播总线/反馈总线传递给多个 stage，而不是逐级传递。因此用一个大的 `struct` 把所有后向信息打包，每个 stage 自己读取和写入相关控制信号。
+1. 前向通信，主要结构包括 `struct FetchStruct`（from fetch to decode）、`struct IEWStruct`（from IEW to commit）等。前向流是流水线数据，承载的是指令流本身，逐级传递。而各级的带宽、延迟不同，因此用不同的 struct 来精确描述每一级传输的“一组指令 bundle”。
+2. 后向通信，由 `struct TimeStruct` 承担，其中定义了 `struct DecodeComm`、`struct IewComm` 等结构体。后向信息不是指令流，而是一些全局控制信号。这些控制信息在硬件里通常通过广播总线/反馈总线传递给多个 stage，而不是逐级传递。因此用一个大的 struct 把所有后向信息打包，每个 stage 自己读取和写入相关控制信号。
 
 每个周期都会推进 time buffer：
 ``` cpp
@@ -82,7 +82,7 @@ IEW::setIEWQueue(TimeBuffer<IEWStruct> *iq_ptr)
 }
 ```
 
-需要注意的是，这里的 `toRename` 和 `toFetch` 写的是同一个 `TimeStruct`，命名不同只是为了直观，我们完全可以统一成一个 toPrev。事实上 commit stage 就是这么做的，它只定义了一个反向传播的 `toIEW = timeBuffer->getWire(0);`，然而不仅仅是 iew stage，decode、fetch 都需要 commitInfo。
+需要注意的是，这里的 `toRename` 和 `toFetch` 写的是同一个 `TimeStruct`，命名不同只是为了直观，我们完全可以统一成一个 `toPrev`。事实上 commit stage 就是这么做的，它只定义了一个反向传播的 `toIEW = timeBuffer->getWire(0);`，然而不仅仅是 iew stage，decode、fetch 都需要 commitInfo。
 
 ---
 
@@ -230,7 +230,7 @@ bool lookup(ThreadID tid, Addr branch_addr, void * &bp_history) override;
 ``` cpp
 void btbUpdate(ThreadID tid, Addr branch_addr, void * &bp_history) override;
 ```
-发生 BTB miss 时调用。这种情况下，即使预测器成功预测了这个分支方向，也无法给出跳转目标地址。因此，这个分支会被当作 not taken 处理，并据此对推测性更新的预测器维护的历史进行修正。
+发生 BTB miss 时调用。这种情况下，即使预测器成功预测了分支方向，也无法给出跳转目标地址。因此，这个分支会被当作 not taken 处理，并据此对推测性更新的预测器维护的历史进行修正。
 
 ``` cpp
 void update(ThreadID tid, Addr branch_addr, bool taken, void *bp_history,
@@ -399,9 +399,9 @@ Fetch::checkSignalsAndUpdate(ThreadID tid)
 
 这里的 doneSeqNum 是不被 flush 掉的最新的指令。
 
-每当我们要 squash 这个预测器，我们会把预测器维护的历史逐渐回退，并把 flush 掉的指令维护的历史 delete 掉。最后一次 `bp_hist = Ri->hist;` 会使得预测器维护的历史变成 doneSeqNum + 1 的那个被 flush 掉的指令进行分支预测、改动预测器维护历史 之前的状态，也就是 doneSeqNum 这条指令改动过后的状态。
+每当我们要 squash 这个预测器，我们会把预测器维护的历史逐渐回退，并把 flush 掉的指令维护的历史 delete 掉。最后一次 `bp_hist = Ri->hist;` 会使得预测器维护的历史变成 doneSeqNum + 1 的那个被 flush 掉的指令进行分支预测、改动预测器维护历史之前的状态，也就是 doneSeqNum 这条指令改动过后的状态。
 
-第二个 `squash` 会 `pred_hist.pop_front();`，最终 pred_hist 中最新的是 doneSeqNum 对应的指令。
+第二个 `squash` 会 `pred_hist.pop_front();`，最终 `pred_hist` 中最新的是 doneSeqNum 对应的指令。
 
 ### update
 
@@ -445,7 +445,7 @@ BPredUnit::squash(const InstSeqNum &squashed_sn,
 
 这里的 `update` 在 `squash(squashed_sn, tid);` 之后调用，此时将 `pred_hist.front()`（也就是 doneSeqNum 对应的指令） 维护的历史赋给预测器维护的历史，然后调用 `update_hist` 对预测器历史进行更新。
 
-我们重写的虚函数里 `if (squashed)` 情况不需要 delete，因为走到这里的其实是 doneSeqNum 对应的指令，是我们要保的。
+我们重写的虚函数里 `if (squashed)` 的情况不需要 delete，因为走到这里的其实是 doneSeqNum 对应的指令，是我们要保的。
 
 ### 分支预测正确、错误处理流程
 
@@ -453,7 +453,7 @@ BPredUnit::squash(const InstSeqNum &squashed_sn,
 
 当这条分支指令没有被 flush 掉且预测正确，commit stage 会将该分支同周期提交的那组指令中最新指令的编号传给 fetch，fetch 会调用 `update` 函数，后者调用 `update(squashed = false)`，对预测器部件进行更新，并销毁 Checkpoint。
 
-当这条分支指令不是因预测错误而被 flush 掉，会调用 `squash` 函数，squash 预测器，并逐渐回退预测器维护的历史，最后预测器维护的历史变成 doneSeqNum + 1 的那个被 flush 掉的指令进行分支预测、改动预测器维护历史 之前的状态，也就是 doneSeqNum 这条指令改动过后的状态。
+当这条分支指令不是因预测错误而被 flush 掉，会调用 `squash` 函数，squash 预测器，并逐渐回退预测器维护的历史，最后预测器维护的历史变成 doneSeqNum + 1 的那个被 flush 掉的指令进行分支预测、改动预测器维护历史之前的状态，也就是 doneSeqNum 这条指令改动过后的状态。
 
 当这条指令分支预测错误且没有在处理前被 flush 掉，在上面的流程之后，会调用 `update(squashed = true)`，将 `pred_hist.front()`（也就是 doneSeqNum 对应的指令） 维护的历史赋给预测器维护的历史，然后 `update_hist` 对预测器历史进行更新。
 
@@ -461,7 +461,7 @@ BPredUnit::squash(const InstSeqNum &squashed_sn,
 
 ## 预测器性能评估和相关统计信息
 
-作者参考了 [gem5使用指南](https://enoch2090-blog.vercel.app/article/gem5-manual) 中分享的脚本 `benchmark.py`{: .filepath}，在初步评估预测器性能时考察 IPC、条件分支预测正确率和 MPKI（Mispredictions Per Kilo Instructions）三个指标。三个指标均通过从 `m5out/stats.txt`{: .filepath} 中读取数据并计算。
+作者参考了 [gem5使用指南](https://enoch2090-blog.vercel.app/article/gem5-manual) 中分享的脚本 `benchmark.py`{: .filepath}，在初步评估预测器性能时考察 IPC、条件分支预测正确率和 MPKI（Mispredictions Per Kilo Instructions）三个指标。这三个指标均通过从 `m5out/stats.txt`{: .filepath} 中读取数据来计算。
 ``` python
 ipc = stats_dict["system.cpu.ipc"]
 incorr = stats_dict["system.cpu.branchPred.condIncorrect"]
@@ -666,7 +666,8 @@ or
 （2）直接分支 且 无条件或预测为跳转，目标地址错误  
 则向fetch传递branchMispredict信息；
 2. exe 阶段发现指令 `*next_pc != *predPC`  
-则向 commit 传递 mispredictInst 信息，commit 阶段再向 fetch 传递 mispredictInst 信息  
+则向 commit 传递 mispredictInst 信息，commit 阶段再向 fetch 传递 mispredictInst 信息
+
 最后 fetch 调用 `BPredUnit::squash`，condIncorrect 加一。
 
 branchMispredicts：  
@@ -685,7 +686,7 @@ system.cpu.commit.branchMispredicts 38 # The number of times a branch was mispre
 可以看到
 
 $$
-system.cpu.branchPred.condIncorrect = system.cpu.decode.branchMispred + system.cpu.commit.branchMispredicts
+\text{system.cpu.branchPred.condIncorrect} = \text{system.cpu.decode.branchMispred} + \text{system.cpu.commit.branchMispredicts}
 $$
 
 需注意的是，直接、间接分支和条件、非条件分支的概念是正交的，统计的条件分支指令个数和 condIncorrect 个数中既有直接指令也有间接指令。

@@ -30,7 +30,9 @@ description: 本文介绍建站目的和中英文混排文档规范。
 * [中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)
 * [简体中文文本排版指南](https://zhuanlan.zhihu.com/p/49729668)
 
-基本的中英文和 Markdown 语法及标点使用规范不在此赘述。
+基础的中英文和 Markdown 语法及标点使用规范不在此赘述。
+
+使用 Jekyll 构建博客时的写作注意事项参见 [撰写文章](https://frogmanr9.github.io/posts/githubpages-jekyll-chirpy/#撰写文章)。
 
 ### 标点符号
 
@@ -71,7 +73,7 @@ description: 本文介绍建站目的和中英文混排文档规范。
 5. 段落内的内联代码、链接与字符、数字之间加半角空格，与标点之间不加空格。
 > 例：`pwd` 命令可显示当前工作目录的绝对路径。
 
-6. 使用加粗、删除线等文本样式与字符、数字之间加半角空格，与标点之间不加空格。
+6. 加粗、删除线等文本样式与字符、数字之间加半角空格，与标点之间不加空格。
 
 ### Markdown 语法
 

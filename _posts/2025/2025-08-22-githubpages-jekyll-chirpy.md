@@ -2,9 +2,9 @@
 title: "使用 Github Pages + Jekyll Chirpy 搭建个人主页"
 date: 2025-08-22 16:30:00 +0800
 categories: [Web]
-tags: [guidelines, jekyll]     # TAG names should always be lowercase
+tags: [jekyll, manuals]     # TAG names should always be lowercase
 
-description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页的流程和注意事项。需注意的是，本文不涉及详细的个性化配置。
+description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页、进行个性化配置的操作流程和注意事项。
 ---
 
 ## 环境
@@ -95,7 +95,7 @@ bundle exec jekyll s
 
 ---
 
-## 其他配置
+## 个性化配置
 
 ### 自定义网站图标
 
@@ -115,6 +115,7 @@ Chirpy 的图标放在 `assets/img/favicons`{: .filepath} （注意加 s）中�
 2. Front Matter 中的 title 建议用半角双引号（`""`）包裹，以防 YAML 解析器对标题中特殊字符（如 :）误解析。
 3. Jekyll/GitHub Pages 的无障碍检查要求每个 `<img>` 都要有 `alt` 描述。
 4. Kramdown 是 Jekyll 的默认 Markdown 渲染器。该渲染器默认对每个有序列表都会重新从 1 开始编号，无论 Markdown 中写的是 1.、2. 还是 3.。默认情况下，Jekyll 使用 GitHub Flavored Markdown（GFM）处理器处理 Kramdown。如果希望隔一行的内容被算作第 1 条列表项的一部分，而不是新开一段，从而避免 Kramdown 自动重编号，**列表项内的额外段落必须缩进四个空格**。
+5. JavaScript 中的单行注释（`//`）会注释掉该行剩余的所有内容。当 Jekyll-Minifier 将整个HTML文件压缩成单行时，注释会“吞噬”掉函数剩余部分和闭合的下花括号，表现为 `Uncaught SyntaxError: Unexpected end of input`。建议在 JavaScript 中使用块注释（`/* ... */`）来避免这个问题。
 
 ### 评论区
 

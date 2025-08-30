@@ -4,9 +4,12 @@ date: 2025-08-06 19:04:00 +0800
 categories: [CPU, Branch Prediction Unit (BPU)]
 tags: [cbp, cpp, notes, papers]     # TAG names should always be lowercase
 
-description: 对 CBP-6 冠军项目 RUNLTS 分支预测器论文和源代码的阅读笔记。本文原为之前汇报所用，迁移至此，比较杂乱。
+description: 对 CBP-6 冠军项目 RUNLTS 分支预测器论文和源代码的阅读笔记。
 media_subpath: /assets/2025/2025-08-06-runlts-reading-notes/
 ---
+
+> 本文原为之前汇报所用，迁移至此，比较杂乱。
+{: .prompt-info }
 
 > Block quote in this note is used to show the relevant part in the original code.
 
