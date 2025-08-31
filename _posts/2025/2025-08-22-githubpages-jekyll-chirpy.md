@@ -47,10 +47,10 @@ jekyll -v
 ### 新建 Github 仓库
 
 1. 有两种选择：
-* 对于新手而言，建议使用 [chirpy-starter](https://github.com/cotes2020/chirpy-starter)，缺点是能做的改动较少；
+* 对于新手而言，建议使用 [chirpy-starter](https://github.com/cotes2020/chirpy-starter)，优点是更新便捷，缺点是能做的改动较少；
 * 如果对 Jekyll 比较熟悉或希望做较大改动，可以使用 [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)。
 
-    这里介绍前一种。使用前一种时也可以将希望修改的文件从 [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 中迁移过来进行改动。
+    这里介绍前一种。使用前一种时也可以将希望修改的文件从 [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 中迁移过来进行改动，在生成博客时会覆盖原先 gem 包中的同名文件。
 
 2. 点击 `Use this template`，`Create a new repository`，仓库命名为 `username.github.io`{: .filepath}。注意区分 Github 的 name 和 username，如果 username 中有大写则用小写。
 
@@ -95,7 +95,9 @@ bundle exec jekyll s
 
 ---
 
-## 个性化配置
+## 博客内容个性化配置
+
+Jekyll 在 3.2.0 版本后引入了 `gem-based theme`，实现了主题样式和博客内容的分离。利用 Chirpy Starter 生成的 blog 只包含内容文件。本节在这样的基础上介绍个性化配置。
 
 ### 自定义网站图标
 
@@ -169,6 +171,12 @@ Chirpy 的图标放在 `assets/img/favicons`{: .filepath} （注意加 s）中�
 ### 其他装饰效果
 
 推荐阅读 [Github主页Profile装饰指南](https://wolfsmith520-github.github.io/2025/04/20/GithubProfileGuide/)。
+
+---
+
+## 主题样式个性化配置
+
+推荐阅读 [Chirpy Blog Customization](https://huanyushi.github.io/posts/chirpy-blog-customization/)。
 
 ---
 

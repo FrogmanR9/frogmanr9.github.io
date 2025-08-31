@@ -480,15 +480,11 @@ print_metric("MPKI", f"{(mispred / ninst * 1000):.4f}", "(branchMispredicts / nu
 即
 
 $$
-\text{IPC} = \frac{\text{numInsts}}{\text{cycles}}
-$$
-
-$$
-\text{Accuracy} = \left( 1 - \frac{\text{incorr}}{\text{totbr}} \right) \times 100
-$$
-
-$$
-\text{MPKI} = \frac{\text{branchMispredicts}}{\text{numInsts}} \times 1000
+\begin{align}
+\text{IPC} &= \frac{\text{numInsts}}{\text{cycles}} \\
+\text{Accuracy} &= \left( 1 - \frac{\text{condIncorrect}}{\text{condPredicted}} \right) \times 100 \\
+\text{MPKI} &= \frac{\text{branchMispredicts}}{\text{numInsts}} \times 1000 \\
+\end{align}
 $$
 
 本节将对使用的 `numInsts`、`condPredicted`、`condIncorrect` 和 `branchMispredicts` 四个统计数据进行追踪和分析。

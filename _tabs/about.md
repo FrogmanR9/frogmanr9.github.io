@@ -116,10 +116,6 @@ order: 4
     z-index: 1;
   }
 
-  .btn-language:hover {
-    background-color: #dcd5d5ff; /* Soft hover effect */
-  }
-
   .btn-language:focus {
     outline: none;
   }
@@ -181,7 +177,7 @@ order: 4
 
 <!-- Badge Rows -->
 <div style="text-align:center; margin-bottom:1rem;">
-  <!-- first row -->
+  <!-- the first row -->
   <div>
     <img src="https://img.shields.io/badge/Just-for_fun-blue?style=flat" 
         alt="Just for fun badge"
@@ -193,7 +189,7 @@ order: 4
         alt="FACTA NON VERBA badge"
         style="display:inline-block; margin-right:6px; vertical-align:middle;">
   </div>
-  <!-- second row -->
+  <!-- the second row -->
   <div>
     <img src="https://img.shields.io/badge/C-A8B9CC?style=flat&logo=c&logoColor=white" 
         alt="C badge"
@@ -205,9 +201,12 @@ order: 4
         alt="Python badge"
         style="display:inline-block; margin-right:6px; vertical-align:middle;">
   </div>
-  <!-- third row -->
+  <!-- the third row -->
   <div>
-    <img src="https://img.shields.io/badge/巨浪_巨浪-不断地增涨-1E90FF?style=flat" 
+    <img src="https://img.shields.io/badge/证道院_|_飞行器设计-2E7D32?style=flat&logoColor=white" 
+        alt="证道院·飞行器设计 badge"
+        style="display:inline-block; margin-right:6px; vertical-align:middle;">
+    <img src="https://img.shields.io/badge/巨浪_巨浪_不断地增涨-1565C0?style=flat&logoColor=white" 
         alt="巨浪 巨浪 不断地增涨 badge"
         style="display:inline-block; margin-right:6px; vertical-align:middle;">
   </div>
@@ -250,7 +249,14 @@ order: 4
 
 ---
 
-<img src="https://readme-typing-svg.demolab.com/?lines=Website+Statistics;Welcome+to+Frogman's+Blog&center=true&width=1000&height=50&size=32&font=Righteous" alt="Typing text animation">
+<style>
+  img.typing {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+<img class="typing" src="https://readme-typing-svg.demolab.com/?lines=Website+Statistics;Welcome+to;Frogman's+Blog&center=true&size=32&font=Righteous" alt="Typing text animation">
 
 
 
