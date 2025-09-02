@@ -105,6 +105,9 @@ indexed by HitBank and AltConf
 
 If the entry's ctr = 0 or -1 and USE_ALT_ON_NA is ≥ 0, use the alternate prediction. Otherwise use LongestMatchPred.
 
+> 这里 `USE_ALT_ON_NA` 的 index 计算方法为 `((((pv.HitBank - 1) / 8) << 1) + pv.AltConf) % (SIZEUSEALT - 1)`，其中 `HitBank` 最大为 23，`AltConf` 为 0 或 1，所以 `(((pv.HitBank - 1) / 8) << 1) + pv.AltConf)` 其实只会产生 0 ~ 5，并没有用到 16 个表项。事实上这个计算方法就是 Andre Seznec 在 CBP-5 所使用的。
+{: .prompt-warning }
+
 ### Update
 
 #### Tagged-Table Allocation
@@ -630,11 +633,7 @@ void update(UINT64 PC, bool resolveDir, bool pred_taken, UINT64 nextPC, const cb
 
 ## 复现
 
-
-
-
-
-
+参见 [基于 gem5 复现 RUNLTS 分支预测器](https://frogmanr9.github.io/posts/gem5-bpu-runlts/)。
 
 ---
 

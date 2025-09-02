@@ -666,6 +666,9 @@ or
 
 最后 fetch 调用 `BPredUnit::squash`，condIncorrect 加一。
 
+> 可以看到，condIncorrect 的统计没有进行条件分支的筛选，是需要修正的。
+{: .prompt-danger }
+
 branchMispredicts：  
 exe 阶段发现指令 `*next_pc != *predPC`，则向 commit 传递 mispredictInst 信息  
 commit 阶段 branchMispredicts 加一。
