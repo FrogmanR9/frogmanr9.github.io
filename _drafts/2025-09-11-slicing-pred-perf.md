@@ -92,7 +92,7 @@ $$
 \end{align}
 $$
 
-在实际性能评估过程中还会遇到数据选取的问题。例如一个切片中预测错误的分支指令数，decode 阶段和 commit 阶段均有统计，是选取它们之和，还是选取 commit 阶段的统计数据，即是否将被 flush 掉的错误预测分支计入，需要我们根据实际需要审慎考量。这也是本文使用 `numBrIncorrect`、`numBrMispredicted` 等不同名称的原因。
+在实际性能评估过程中还会遇到数据选取的问题。例如一个切片中预测错误的分支指令数，decode 阶段和 commit 阶段均有统计，是选取它们之和，还是选取 commit 阶段的统计数据，是否将在到达 commit stage 以前被 flush 掉的错误预测分支计入，需要我们根据实际情况审慎考量。这也是本文使用 `numBrIncorrect`、`numBrMispredicted` 等不同名称的原因。
 
 ---
 
