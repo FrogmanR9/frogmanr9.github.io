@@ -257,7 +257,7 @@ order: 4
 </p>
 
 <p id="about-this-site-zh" class="about-text" style="display:none;">
-  本站建于 2025 年 8 月 20 日，基于 Jekyll 构建，采用 Chirpy 主题，并部署在 Github Pages 上。<br>
+  本站建于 2025 年 8 月 20 日，基于 Jekyll 构建，采用 Chirpy 主题，并部署在 GitHub Pages 上。<br>
   本站用作个人博客，写一些专业和兴趣相关的文章，一来聊以自娱，二来也希望为社区做一点微小的贡献。<br>
   欢迎大家通过评论或邮件与我交流。
 </p>

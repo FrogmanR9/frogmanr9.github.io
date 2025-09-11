@@ -9,7 +9,7 @@ description: 本文介绍建站目的和中英文混排文档规范。
 
 ## 关于本站
 
-本站建于 2025 年 8 月 20 日，基于 Jekyll 构建，采用 Chirpy 主题，并部署在 Github Pages 上。
+本站建于 2025 年 8 月 20 日，基于 Jekyll 构建，采用 Chirpy 主题，并部署在 GitHub Pages 上。
 
 本站地址：[https://frogmanr9.github.io](https://frogmanr9.github.io)。
 

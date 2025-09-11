@@ -1,10 +1,10 @@
 ---
-title: "使用 Github Pages + Jekyll Chirpy 搭建个人主页"
+title: "使用 GitHub Pages + Jekyll Chirpy 搭建个人主页"
 date: 2025-08-22 16:30:00 +0800
 categories: [Web]
 tags: [jekyll, manuals]     # TAG names should always be lowercase
 
-description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页、进行个性化配置的操作流程和注意事项。
+description: 本文介绍使用 GitHub Pages + Jekyll Chirpy 搭建个人主页、进行个性化配置的操作流程和注意事项。
 ---
 
 ## 环境
@@ -19,8 +19,8 @@ description: 本文介绍使用 Github Pages + Jekyll Chirpy 搭建个人主页�
 
 ### 参考资料
 
-* [【避坑篇】使用Github Pages搭建个人主页or博客网站【上】](https://zhuanlan.zhihu.com/p/641525444)
-* [【快速部署+客制化】Github Pages+Jekyll Chirpy 速搭个人主页](https://zhuanlan.zhihu.com/p/695291923)
+* [【避坑篇】使用GitHub Pages搭建个人主页or博客网站【上】](https://zhuanlan.zhihu.com/p/641525444)
+* [【快速部署+客制化】GitHub Pages+Jekyll Chirpy 速搭个人主页](https://zhuanlan.zhihu.com/p/695291923)
 * [Chirpy notes](https://chirpy.cotes.page)
 * [Jekyll docs](https://jekyllcn.com/docs/home/)
 * [GitHub Pages documentation](https://docs.github.com/en/pages)
@@ -44,7 +44,7 @@ gem install jekyll bundler
 jekyll -v
 ```
 
-### 新建 Github 仓库
+### 新建 GitHub 仓库
 
 1. 有两种选择：
 * 对于新手而言，建议使用 [chirpy-starter](https://github.com/cotes2020/chirpy-starter)，优点是更新便捷，缺点是能做的改动较少；
@@ -52,15 +52,15 @@ jekyll -v
 
     这里介绍前一种。使用前一种时也可以将希望修改的文件从 [jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 中迁移过来进行改动，在生成博客时会覆盖原先 gem 包中的同名文件。
 
-2. 点击 `Use this template`，`Create a new repository`，仓库命名为 `username.github.io`{: .filepath}。注意区分 Github 的 name 和 username，如果 username 中有大写则用小写。
+2. 点击 `Use this template`，`Create a new repository`，仓库命名为 `username.github.io`{: .filepath}。注意区分 GitHub 的 name 和 username，如果 username 中有大写则用小写。
 
-3. 在新建仓库中点击 `Settings`，在 `Pages` 中将 Source 修改为 `Github Action`。
+3. 在新建仓库中点击 `Settings`，在 `Pages` 中将 Source 修改为 `GitHub Action`。
 
 4. 可以将 `_config.yml`{: .filepath} 文件中的 url 改为自己的网址，此时从浏览器进入即可看到原始的网站了。
 
 ### 本地部署和调试
 
-1. 打开 CMD，到目标目录，从 Github 上克隆刚刚创建的仓库到本地。
+1. 打开 CMD，到目标目录，从 GitHub 上克隆刚刚创建的仓库到本地。
 
 2. 打开 VS Code，到该仓库的根目录下，在终端输入
 ``` shell
@@ -91,7 +91,7 @@ bundle exec jekyll s
 
 ### 部署个人主页
 
-把本地修改 commit 并提交到 Github 远程仓库上，可以触发 Github Action 的 Build and deployment 工作流进行部署。如果没有自动触发，可以手动点击 `Build and Deploy` 进行部署。
+把本地修改 commit 并提交到 GitHub 远程仓库上，可以触发 GitHub Action 的 Build and deployment 工作流进行部署。如果没有自动触发，可以手动点击 `Build and Deploy` 进行部署。
 
 ---
 
@@ -118,6 +118,10 @@ Chirpy 的图标放在 `assets/img/favicons`{: .filepath} （注意加 s）中�
 3. Jekyll/GitHub Pages 的无障碍检查要求每个 `<img>` 都要有 `alt` 描述。
 4. Kramdown 是 Jekyll 的默认 Markdown 渲染器。该渲染器默认对每个有序列表都会重新从 1 开始编号，无论 Markdown 中写的是 1.、2. 还是 3.。默认情况下，Jekyll 使用 GitHub Flavored Markdown（GFM）处理器处理 Kramdown。如果希望隔一行的内容被算作第 1 条列表项的一部分，而不是新开一段，从而避免 Kramdown 自动重编号，**列表项内的额外段落必须缩进四个空格**。
 5. JavaScript 中的单行注释（`//`）会注释掉该行剩余的所有内容。当 Jekyll-Minifier 将整个HTML文件压缩成单行时，注释会“吞噬”掉函数剩余部分和闭合的下花括号，表现为 `Uncaught SyntaxError: Unexpected end of input`。建议在 JavaScript 中使用块注释（`/* ... */`）来避免这个问题。
+
+#### 私密文章
+
+参见 [GitHub Pages 私密文章实现](https://frogmanr9.github.io/posts/githubpages-private-drafts/)。
 
 ### 评论区
 
@@ -170,7 +174,7 @@ Chirpy 的图标放在 `assets/img/favicons`{: .filepath} （注意加 s）中�
 
 ### 其他装饰效果
 
-推荐阅读 [Github主页Profile装饰指南](https://wolfsmith520-github.github.io/2025/04/20/GithubProfileGuide/)。
+推荐阅读 [GitHub主页Profile装饰指南](https://wolfsmith520-github.github.io/2025/04/20/GitHubProfileGuide/)。
 
 ---
 

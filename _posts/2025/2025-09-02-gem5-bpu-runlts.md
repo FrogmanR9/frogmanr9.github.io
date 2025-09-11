@@ -12,7 +12,7 @@ media_subpath: /assets/2025/2025-09-02-gem5-bpu-runlts/
 
 gem5 是一个模块化的、基于离散事件驱动的计算机系统模拟平台。本文使用 `gem5 version 22.0.0.0` 对第六届分支预测大赛（CBP-6）的冠军项目 RUNLTS 进行复现。
 
-gem5 的相关资料可以在 [官网](https://www.gem5.org) 找到，不在此赘述。CBP-6 的官方模拟器和接口定义可见 [Github 仓库](https://github.com/ramisheikh/cbp2025)。
+gem5 的相关资料可以在 [官网](https://www.gem5.org) 找到，不在此赘述。CBP-6 的官方模拟器和接口定义可见 [GitHub 仓库](https://github.com/ramisheikh/cbp2025)。
 
 RUNLTS 全称是 Register-value-aware predictor Utilizing Nested Large TableS，论文、源代码、PPT 和演讲视频可以在 [CBP2025 Workshop Program](https://ericrotenberg.wordpress.ncsu.edu/cbp2025-workshop-program/) 中找到。RUNLTS 基于 TAGE-SC-L 预测器，主要由 TAGE 和 SC 两大模块组成（loop 预测器实现复杂而对预测正确率贡献不大，因此不采用）。其中 SC 包含 Bias 部件、History 部件和 Register 部件，所有组件均由 Usefulness Weight Table（UT）和 Prediction Weight Table（WT）组成（二者内部表项均为有符号饱和计数器）：UT 指示本组件有用程度，决定权重，根据本组件是否预测正确更新；WT 指示本组件预测方向，根据分支实际方向更新。
 
