@@ -2,9 +2,9 @@
 title: "gem5 分支预测模块简介"
 date: 2025-08-29 22:54:00 +0800
 categories: [CPU, Branch Prediction Unit (BPU)]
-tags: [c-model, cpp, gem5, notes]     # TAG names should always be lowercase
+tags: [c-model, cpp, gem5, notes, perf-eval]     # TAG names should always be lowercase
 
-description: 本文简要介绍 gem5 的分支预测模块，为在 gem5 上实现自定义的分支预测器做准备。
+description: 本文简要介绍 gem5 的分支预测模块和性能评估方法，为在 gem5 上实现自定义的分支预测器做准备。
 math: true
 ---
 
@@ -481,9 +481,9 @@ print_metric("MPKI", f"{(mispred / ninst * 1000):.4f}", "(branchMispredicts / nu
 
 $$
 \begin{align}
-\text{IPC} &= \frac{\text{numInsts}}{\text{cycles}} \\
-\text{Accuracy} &= \left( 1 - \frac{\text{condIncorrect}}{\text{condPredicted}} \right) \times 100 \\
-\text{MPKI} &= \frac{\text{branchMispredicts}}{\text{numInsts}} \times 1000 \\
+    \text{IPC} &= \frac{\text{numInsts}}{\text{cycles}} \\
+    \text{Accuracy} &= \left( 1 - \frac{\text{condIncorrect}}{\text{condPredicted}} \right) \cdot 100\% \\
+    \text{MPKI} &= \frac{\text{branchMispredicts}}{\text{numInsts}} \cdot 1000 \\
 \end{align}
 $$
 
@@ -689,6 +689,8 @@ $$
 $$
 
 需注意的是，直接、间接分支和条件、非条件分支的概念是正交的，统计的条件分支指令个数和 condIncorrect 个数中既有直接指令也有间接指令。
+
+对测试程序集切片执行后的性能评估可以参见 [切片后的分支预测性能指标计算：IPC、Accuracy 与 MPKI](https://frogmanr9.github.io/posts/slicing-pred-perf/)。
 
 ---
 

@@ -2,7 +2,7 @@
 title: "基于 gem5 复现 RUNLTS 分支预测器"
 date: 2025-09-02 16:06:00 +0800
 categories: [CPU, Branch Prediction Unit (BPU)]
-tags: [c-model, cbp, cpp, gem5, manuals]     # TAG names should always be lowercase
+tags: [c-model, cbp, cpp, gem5, manuals, perf-eval]     # TAG names should always be lowercase
 
 description: 本文介绍如何在 gem5 模拟器上实现自己的分支预测器，并展示 CBP-6 冠军项目 RUNLTS 在 gem5 上的复现。
 media_subpath: /assets/2025/2025-09-02-gem5-bpu-runlts/

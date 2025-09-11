@@ -191,6 +191,10 @@ order: 4
   </div>
   <!-- the second row -->
   <div>
+    <!-- not official version -->
+    <img src="https://img.shields.io/badge/Verilog_HDL-003366?style=flat" 
+        alt="Verilog HDL badge"
+        style="display:inline-block; margin-right:6px; vertical-align:middle;">
     <img src="https://img.shields.io/badge/C-A8B9CC?style=flat&logo=c&logoColor=white" 
         alt="C badge"
         style="display:inline-block; margin-right:6px; vertical-align:middle;">
@@ -203,10 +207,23 @@ order: 4
   </div>
   <!-- the third row -->
   <div>
-    <img src="https://img.shields.io/badge/证道院_|_飞行器设计-2E7D32?style=flat&logoColor=white" 
+    <!-- not official version -->
+    <img src="https://img.shields.io/badge/MATLAB-D84924?style=flat" 
+        alt="MATLAB red badge"
+        style="display:inline-block; margin-right:6px; vertical-align:middle;">
+    <img src="https://img.shields.io/badge/LaTeX-008080?style=flat&logo=latex&logoColor=white" 
+        alt="LaTeX badge"
+        style="display:inline-block; margin-right:6px; vertical-align:middle;">
+    <img src="https://img.shields.io/badge/Markdown-000000?style=flat&logo=markdown&logoColor=white" 
+        alt="Markdown badge"
+        style="display:inline-block; margin-right:6px; vertical-align:middle;">
+  </div>
+  <!-- the fourth row -->
+  <div>
+    <img src="https://img.shields.io/badge/证道院_|_飞行器设计-2E7D32?style=flat" 
         alt="证道院·飞行器设计 badge"
         style="display:inline-block; margin-right:6px; vertical-align:middle;">
-    <img src="https://img.shields.io/badge/巨浪_巨浪_不断地增涨-1565C0?style=flat&logoColor=white" 
+    <img src="https://img.shields.io/badge/巨浪_巨浪_不断地增涨-1565C0?style=flat" 
         alt="巨浪 巨浪 不断地增涨 badge"
         style="display:inline-block; margin-right:6px; vertical-align:middle;">
   </div>
